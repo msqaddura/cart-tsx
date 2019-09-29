@@ -8,6 +8,7 @@ import { matchesReducer } from './matches/reducer'
 import matchesSaga from './matches/sagas'
 import { CartState } from './cart/types'
 import { cartReducer } from './cart/reducer'
+import cartSaga from './cart/saga'
 
 export interface ApplicationState {
   router: RouterState
@@ -25,5 +26,5 @@ export const createRootReducer = (history: History) =>
   })
 
 export function* rootSaga() {
-  yield all([fork(matchesSaga)])
+  yield all([fork(matchesSaga), fork(cartSaga)])
 }

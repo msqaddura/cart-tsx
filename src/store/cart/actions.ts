@@ -10,3 +10,4 @@ export const updateCartItem = (item: CartItem) => action(CartActionTypes.UPDATE_
 export const flushCart = () => action(CartActionTypes.FLUSH_CART)
 
 export const submitCart = () => action(CartActionTypes.SUBMIT_CART)
+export const submitCartSuccess = () => action(CartActionTypes.SUBMIT_CART_SUCCESS)

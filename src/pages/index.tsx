@@ -1,7 +1,7 @@
-import * as React from 'react'
+import matches from './matches'
 
 function IndexPage() {
-  return <h1>hi</h1>
+  return matches
 }
 
 export default IndexPage

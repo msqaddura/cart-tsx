@@ -23,7 +23,7 @@ const Cart: React.FC<Props> = ({ data, total, submit, flush }: Props) => (
       <button onClick={() => flush()} type="button" className="btn btn-warning">
         Clear
       </button>
-      <button onClick={() => submit()} type="button" className="btn btn-primary">
+      <button onClick={() => submit()} type="button" className="btn btn-primary" disabled={total === 0}>
         Submit
       </button>
     </div>

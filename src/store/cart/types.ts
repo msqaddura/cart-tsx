@@ -16,6 +16,7 @@ export enum CartActionTypes {
   REMOVE_CART_ITEM = '@@cart/REMOVE_CART_ITEM',
   UPDATE_CART_ITEM = '@@cart/UPDATE_CART_ITEM',
   SUBMIT_CART = '@@cart/SUBMIT_CART',
+  SUBMIT_CART_SUCCESS = '@@cart/SUBMIT_CART_SUCCESS',
 
   FLUSH_CART = '@@cart/FLUSH_CART'
 }

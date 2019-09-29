@@ -6,6 +6,7 @@ import { CartState } from '../../store/cart/types'
 
 const CartSummary: React.SFC<CartState> = ({ data, total }) => (
   <Wrapper>
+    <h1>Summary</h1>
     <p>This is a plan routed page where you can check your cart in JSON format</p>
     <p>Do not worry, your cart is not cleared</p>
     <hr />
@@ -17,7 +18,7 @@ const CartSummary: React.SFC<CartState> = ({ data, total }) => (
   </Wrapper>
 )
 
-const Wrapper = styled('h6')`
+const Wrapper = styled('div')`
   text-align: center;
   margin-top: 20px;
 `

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const Root: React.SFC<any> = ({ children }) => (
+const Root: React.FC = ({ children }) => (
   <>
     <nav className="navbar navbar-dark bg-dark">
       <NavLink to="/">

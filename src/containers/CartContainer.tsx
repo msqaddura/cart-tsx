@@ -29,7 +29,6 @@ export class CartContainer extends React.Component<AllProps> {
   }
 
   public componentDidMount() {
-    const { fetchMatches } = this.props
     // fetchMatches()
   }
 

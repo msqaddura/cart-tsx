@@ -7,7 +7,6 @@ import Root from './components/layout/Root'
 import MatchesPage from './pages/matches'
 import globals from './styles/globals'
 import CheckoutPage from './pages/cart/Checkout'
-import CartSummary from './components/cart/CartSummary'
 
 const Routes: React.FC = () => (
   <Root>

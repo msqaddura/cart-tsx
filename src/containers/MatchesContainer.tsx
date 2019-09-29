@@ -17,8 +17,6 @@ type AllProps = PropsFromState & PropsFromDispatch
 
 class MatchesContainer extends React.Component<AllProps> {
   public componentDidMount() {
-    const { fetchMatches } = this.props
-
     // fetchMatches()
   }
 

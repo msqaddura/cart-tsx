@@ -29,11 +29,12 @@ class MatchesIndexPage extends React.Component<AllProps> {
   public render() {
     return (
       <div className="row">
-        <div className="col-8">
+        <div className="col col-12 col-md-8">
           <MatchesContainer />
         </div>
-        <div className="col-4">
+        <div className="col col-12 col-md-4">
           <CartContainer />
+          <br />
         </div>
       </div>
     )

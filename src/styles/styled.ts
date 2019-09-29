@@ -4,6 +4,10 @@ export interface Theme {
   colors: {
     background: string
     body: string
+    head: string
+    apply: string
+    cancel: string
+    poi: string
   }
   border: string
 }

@@ -28,7 +28,7 @@ const CartItemBox: React.FC<Props> = ({ cartItem, update, remove }) => {
       </div>
       <div>
         <p>{anticipated.name} to win</p>
-        <input type="number" value={stake} onChange={handleChange} min={0} />
+        <input type="number" style={{ maxWidth: '140px' }} value={stake} onChange={handleChange} min={0} />
         <p>To Return: $ {stake || 0 * anticipated.betValue}</p>
       </div>
     </div>

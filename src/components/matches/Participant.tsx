@@ -53,7 +53,7 @@ const BetValue = styled('span')`
 const Button = styled('button')`
   width: 100px;
   border-radius: 0;
-  margin: 0 1px;
+
   &:focus {
     box-shadow: none !important;
   }

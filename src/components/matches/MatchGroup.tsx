@@ -10,11 +10,11 @@ type Props = {
 const MatchGroup: React.FC<Props> = ({ sport, matches }: Props) => {
   const sportSafe = sport.replace(' ', '')
   return (
-    <div className="accordion" id={`accordion_${sportSafe}`}>
-      <div className="card">
-        <div className="card-header" id={`heading_${sportSafe}`}>
+    <Accordion className="accordion" id={`accordion_${sportSafe}`}>
+      <Card className="card">
+        <Header className="card-header" id={`heading_${sportSafe}`}>
           <h2 className="mb-0" style={{ position: 'relative' }}>
-            <button
+            <HeaderButton
               className="btn btn-link stretched-link"
               type="button"
               data-toggle="collapse"
@@ -23,9 +23,9 @@ const MatchGroup: React.FC<Props> = ({ sport, matches }: Props) => {
               aria-controls={`collapse_${sportSafe}`}
             >
               {sport}
-            </button>
+            </HeaderButton>
           </h2>
-        </div>
+        </Header>
 
         <div
           id={`collapse_${sportSafe}`}
@@ -43,11 +43,33 @@ const MatchGroup: React.FC<Props> = ({ sport, matches }: Props) => {
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </Card>
+    </Accordion>
   )
 }
 
-const Accordion = styled('div')
+const Card = styled('div')`
+  border: 0;
+`
 
+const Accordion = styled('div')`
+  box-shadow: 0 0 2px black;
+  margin: 5px;
+`
+const Header = styled('div')`
+  background: ${props => props.theme.colors.head};
+  color: white !important;
+`
+
+const HeaderButton = styled('button')`
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: dodgerblue;
+  }
+  &:focus {
+    text-decoration: none;
+    color: white;
+  }
+`
 export default MatchGroup

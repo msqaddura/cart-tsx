@@ -6,6 +6,7 @@ import { fetchRequest } from '../store/matches/actions'
 import { CartItem } from '../store/cart/types'
 import NoCart from '../components/cart/NoCart'
 import Cart from '../components/cart/Cart'
+import styled from '../styles/styled'
 
 interface PropsFromState {
   data: CartItem[]
@@ -34,13 +35,22 @@ export class CartContainer extends React.Component<AllProps> {
     const { data, total } = this.props
 
     return (
-      <div className={data.length ? 'filled' : 'empty'}>
-        <h1>Bet Slip</h1>
+      <Wrapper className={data.length ? 'filled' : 'empty'}>
+        <h4>Bet Slip</h4>
+        <hr />
         {data.length ? <Cart data={data} total={total} /> : <NoCart />}
-      </div>
+      </Wrapper>
     )
   }
 }
+
+const Wrapper = styled('div')`
+  margin-top: 5px;
+  background: ${props => props.theme.colors.head};
+  box-shadow: 0 0 2px black;
+  color: white;
+  padding: 10px;
+`
 
 const mapStateToProps = ({ cart }: ApplicationState) => ({
   data: cart.data,

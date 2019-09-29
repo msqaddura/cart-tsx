@@ -3,12 +3,13 @@ import { Route, Switch } from 'react-router-dom'
 import { Global } from '@emotion/core'
 
 import Root from './components/layout/Root'
-import IndexPage from './pages/index'
 
 import MatchesPage from './pages/matches'
+import globals from './styles/globals'
 
 const Routes: React.FC = () => (
   <Root>
+    <Global styles={globals} />
     <Switch>
       <Route exact path="/" component={MatchesPage} />
       <Route component={() => <div>Four Oh Four, no links in this project</div>} />

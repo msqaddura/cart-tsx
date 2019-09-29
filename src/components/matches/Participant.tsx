@@ -1,11 +1,12 @@
 /* eslint-disable no-nested-ternary */
 import * as React from 'react'
 import { connect } from 'react-redux'
-import styled from '@emotion/styled'
+
 import { Match, Participant } from '../../store/matches/types'
 import { findMatchInCart } from '../../store/cart/selectors'
 import { ApplicationState } from '../../store'
 import { addItemToCart, removeItemFromCart } from '../../store/cart/actions'
+import styled from '../../styles/styled'
 
 type Props = {
   match: Match
@@ -22,10 +23,11 @@ const ParticipantButton: React.FC<Props> = ({ match, inCart, participant, add, r
     <Button
       onClick={handleClick}
       type="button"
-      className={`btn btn-outline-${inCart ? 'warning' : match.active ? 'primary' : 'dark'}`}
+      className={`btn btn-${inCart ? 'success' : match.active ? 'primary' : 'dark'}`}
       disabled={!match.active}
     >
-      {1 + match.participants.findIndex(par => par.name === participant.name)}:{<BetValue>{participant.betValue}</BetValue>}
+      <Index>{1 + match.participants.findIndex(par => par.name === participant.name)}:</Index>
+      {<BetValue>{match.active ? participant.betValue : ''}</BetValue>}
     </Button>
   )
 }
@@ -39,13 +41,21 @@ const mapDispatchToProps = {
   remove: removeItemFromCart
 }
 
+const Index = styled('span')`
+  float: left;
+`
+
 const BetValue = styled('span')`
   padding-left: 10px;
+  float: right;
 `
 
 const Button = styled('button')`
-  &.is-in {
-    background: red;
+  width: 100px;
+  border-radius: 0;
+  margin: 0 1px;
+  &:focus {
+    box-shadow: none !important;
   }
 `
 

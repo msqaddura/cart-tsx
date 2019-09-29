@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { SPORT, Match } from '../../store/matches/types'
 import MatchItem from './MatchItem'
+import styled from '../../styles/styled'
 
 type Props = {
   sport: SPORT
@@ -46,5 +47,7 @@ const MatchGroup: React.FC<Props> = ({ sport, matches }: Props) => {
     </div>
   )
 }
+
+const Accordion = styled('div')
 
 export default MatchGroup

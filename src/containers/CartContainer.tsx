@@ -7,6 +7,7 @@ import { CartItem } from '../store/cart/types'
 import NoCart from '../components/cart/NoCart'
 import Cart from '../components/cart/Cart'
 import styled from '../styles/styled'
+import { flushCart, submitCart } from '../store/cart/actions'
 
 interface PropsFromState {
   data: CartItem[]
@@ -15,6 +16,8 @@ interface PropsFromState {
 
 interface PropsFromDispatch {
   fetchMatches: typeof fetchRequest
+  flush: typeof flushCart
+  submit: typeof submitCart
 }
 type AllProps = PropsFromState & PropsFromDispatch
 
@@ -31,13 +34,13 @@ export class CartContainer extends React.Component<AllProps> {
   }
 
   public render() {
-    const { data, total } = this.props
+    const { data, total, flush, submit } = this.props
 
     return (
       <Wrapper className={data.length ? 'filled' : 'empty'}>
         <h4>Bet Slip</h4>
         <hr />
-        {data.length ? <Cart data={data} total={total} /> : <NoCart />}
+        {data.length ? <Cart flush={flush} submit={submit} data={data} total={total} /> : <NoCart />}
       </Wrapper>
     )
   }
@@ -57,7 +60,9 @@ const mapStateToProps = ({ cart }: ApplicationState) => ({
 })
 
 const mapDispatchToProps = {
-  fetchMatches: fetchRequest
+  fetchMatches: fetchRequest,
+  flush: flushCart,
+  submit: submitCart
 }
 
 export default connect(

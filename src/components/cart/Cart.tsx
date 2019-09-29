@@ -3,12 +3,15 @@ import React from 'react'
 import { CartItem } from '../../store/cart/types'
 import CartItemBox from './CartItem'
 import styled from '../../styles/styled'
+import { submitCart, flushCart } from '../../store/cart/actions'
 
 interface Props {
   data: CartItem[]
   total: number
+  submit: typeof submitCart
+  flush: typeof flushCart
 }
-const Cart: React.FC<Props> = ({ data, total }: Props) => (
+const Cart: React.FC<Props> = ({ data, total, submit, flush }: Props) => (
   <>
     {data.map((cartItem, index) => (
       <CartItemBox cartItem={cartItem} key={`cartitem_${index}`} />
@@ -17,10 +20,10 @@ const Cart: React.FC<Props> = ({ data, total }: Props) => (
       Total Stake <Stake>€ {total}</Stake>
     </div>
     <div className="btn-group btn-group-sm w-100" role="group">
-      <button type="button" className="btn btn-warning">
+      <button onClick={() => flush()} type="button" className="btn btn-warning">
         Clear
       </button>
-      <button type="button" className="btn btn-primary">
+      <button onClick={() => submit()} type="button" className="btn btn-primary">
         Submit
       </button>
     </div>

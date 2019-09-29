@@ -35,6 +35,9 @@ const reducer: Reducer<CartState> = (state = initialState, action) => {
         )
       })
     }
+    case CartActionTypes.FLUSH_CART: {
+      return initialState
+    }
     default: {
       return state
     }

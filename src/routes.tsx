@@ -14,7 +14,9 @@ const Routes: React.FC = () => (
     <Switch>
       <Route exact path="/" component={MatchesPage} />
       <Route exact path="/checkout" component={CheckoutPage} />
-      <Route component={() => <div>Four Oh Four, no links in this project</div>} />
+      <Route component={MatchesPage} />
+      {/* Only for Github Pages we gonna fall back to Index instead of 404 Not Found
+      <Route component={() => <div>Four Oh Four, no links in this project</div>} /> */}
     </Switch>
   </Root>
 )

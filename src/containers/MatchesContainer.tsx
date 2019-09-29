@@ -19,7 +19,7 @@ class MatchesContainer extends React.Component<AllProps> {
   public componentDidMount() {
     const { fetchMatches } = this.props
 
-    fetchMatches()
+    // fetchMatches()
   }
 
   public render() {

@@ -6,7 +6,7 @@ const mainTheme: Theme = {
     background: '',
     body: '',
     head: darken(0.2, '#007bff'),
-    cancel: 'lime',
+    cancel: '#28a745', // wrong name but anyway
     apply: 'dodgerblue',
     poi: '#a4d1ff'
   },

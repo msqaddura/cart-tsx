@@ -2,6 +2,7 @@
 import React from 'react'
 import { CartItem } from '../../store/cart/types'
 import CartItemBox from './CartItem'
+import styled from '../../styles/styled'
 
 interface Props {
   data: CartItem[]
@@ -13,9 +14,13 @@ const Cart: React.FC<Props> = ({ data, total }: Props) => (
       <CartItemBox cartItem={cartItem} key={`cartitem_${index}`} />
     ))}
     <div>
-      Total<span>{total}</span>
+      Total Stake <Stake>€ {total}</Stake>
     </div>
   </>
 )
+
+const Stake = styled('span')`
+  float: right;
+`
 
 export default Cart

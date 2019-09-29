@@ -7,4 +7,6 @@ export const removeItemFromCart = (item: CartItem) => action(CartActionTypes.REM
 
 export const updateCartItem = (item: CartItem) => action(CartActionTypes.UPDATE_CART_ITEM, item)
 
+export const flushCart = () => action(CartActionTypes.FLUSH_CART)
+
 export const submitCart = () => action(CartActionTypes.UPDATE_CART_ITEM)

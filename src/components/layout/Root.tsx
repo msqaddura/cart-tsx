@@ -5,7 +5,7 @@ const Root: React.FC = ({ children }) => (
   <>
     <nav className="navbar navbar-dark bg-dark">
       <NavLink to="/">
-        <img src="/images/logo.png" alt="logo" />
+        <i className="fa fa-home fa-2x" />
       </NavLink>
     </nav>
     <div className="container">{children}</div>

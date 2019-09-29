@@ -8,7 +8,8 @@ const mainTheme: Theme = {
     head: darken(0.2, '#007bff'),
     cancel: '#28a745', // wrong name but anyway
     apply: 'dodgerblue',
-    poi: '#a4d1ff'
+    poi: '#a4d1ff',
+    disabled: 'red'
   },
   border: '0px'
 }

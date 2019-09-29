@@ -8,6 +8,7 @@ export interface Theme {
     apply: string
     cancel: string
     poi: string
+    disabled: string
   }
   border: string
 }

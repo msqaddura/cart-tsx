@@ -28,11 +28,13 @@ describe('CartContainer Connected to Redux', () => {
   })
 
   it('should not render no-cart', () => {
+    // to avoid deep diving, we need something like enzyme to test without shallow access
     expect(component.root.findByType(CartContainer.WrappedComponent).findAllByProps({ className: 'empty' })).toHaveLength(1)
   })
   it('should render no-cart', () => {
     store.dispatch(addItemToCart({ match: MATCHES[1], anticipated: MATCHES[1].participants[1] }))
     // https://github.com/dmitry-zaets/redux-mock-store/issues/71
+    // as you can see, the store did not get changed, bcz redux-mock-store doesnt work on reducer level
     expect(component.root.findByType(CartContainer.WrappedComponent).findAllByProps({ className: 'filled' })).toHaveLength(0)
   })
 })

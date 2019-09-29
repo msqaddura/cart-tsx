@@ -7,6 +7,7 @@ import { CartState } from '../../store/cart/types'
 const CartSummary: React.SFC<CartState> = ({ data, total }) => (
   <Wrapper>
     <p>This is a plan routed page where you can check your cart in JSON format</p>
+    <p>Do not worry, your cart is not cleared</p>
     <hr />
     <h1>Data</h1>
     <p>{JSON.stringify(data)}</p>

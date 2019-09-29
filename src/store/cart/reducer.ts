@@ -39,6 +39,7 @@ const reducer: Reducer<CartState> = (state = initialState, action) => {
       return initialState
     }
     case CartActionTypes.SUBMIT_CART_SUCCESS: {
+      console.log(state.data, state.total)
       return state
     }
     default: {

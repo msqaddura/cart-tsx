@@ -1,13 +1,12 @@
 import * as React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
-interface RootProps {
-  className?: string
-}
-
-const Root: React.SFC<RootProps> = ({ children }) => (
+const Root: React.SFC<any> = ({ children }) => (
   <div>
     <nav className="navbar navbar-dark bg-dark">
-      <img src="/images/logo.png" alt="logo" />
+      <NavLink to="/">
+        <img src="/images/logo.png" alt="logo" />
+      </NavLink>
     </nav>
     {children}
   </div>

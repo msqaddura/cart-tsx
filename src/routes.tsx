@@ -10,9 +10,8 @@ import MatchesPage from './pages/matches'
 const Routes: React.FC = () => (
   <Root>
     <Switch>
-      <Route exact path="/" component={IndexPage} />
-      <Route path="/matches" component={MatchesPage} />
-      <Route component={() => <div>Not Found</div>} />
+      <Route exact path="/" component={MatchesPage} />
+      <Route component={() => <div>Four Oh Four, no links in this project</div>} />
     </Switch>
   </Root>
 )

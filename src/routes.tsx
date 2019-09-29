@@ -15,8 +15,14 @@ const Routes: React.FC = () => (
       <Route exact path="/" component={MatchesPage} />
       <Route exact path="/checkout" component={CheckoutPage} />
       <Route component={MatchesPage} />
-      {/* Only for Github Pages we gonna fall back to Index instead of 404 Not Found
-      <Route component={() => <div>Four Oh Four, no links in this project</div>} /> */}
+      {
+        <Route
+          component={MatchesPage}
+          // https://github.com/rafrex/spa-github-pages,
+          // should be 404 but for github pages we wil get this one for now as per
+          // component={() => <div>Four Oh Four, no links in this project</div>}
+        />
+      }
     </Switch>
   </Root>
 )

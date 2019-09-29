@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Root: React.FC = ({ children }) => (
   <>
     <nav className="navbar navbar-dark bg-dark">
-      <NavLink to="/matches">
+      <NavLink to="/">
         <i className="fa fa-home fa-2x" />
       </NavLink>
     </nav>
